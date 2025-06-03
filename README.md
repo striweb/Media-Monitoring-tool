@@ -13,6 +13,7 @@
 - 🌐 Internet connectivity checks  
 - 🐳 Docker and Docker Compose support for production and development  
 - 🗃️ MongoDB integration for data persistence  
+- 🖥️ Mongo Express UI for database inspection  
 - 🔧 Utility scripts for setup and maintenance
 
 ---
@@ -23,7 +24,7 @@
 |-----------|------------------|
 | Backend   | Python, Flask    |
 | Frontend  | React (CRA)      |
-| Database  | MongoDB          |
+| Database  | MongoDB + Mongo Express |
 | DevOps    | Docker, Docker Compose |
 | Scripts   | Bash (for setup and automation) |
 
@@ -55,7 +56,6 @@ Media-Monitoring-tool-main/
 - Python 3.7+
 - Node.js and npm (for frontend, optional if using Docker)
 - Docker and Docker Compose (recommended)
-- MongoDB (automatically included via Docker)
 
 ---
 
@@ -67,8 +67,9 @@ cd media-monitoring-tool
 docker-compose up --build
 ```
 
-The app will be available at: [http://localhost:5000](http://localhost:5000)  
-React frontend may run at: [http://localhost:3000](http://localhost:3000)
+- Flask backend: [http://localhost:5000](http://localhost:5000)  
+- React frontend: [http://localhost:3000](http://localhost:3000)  
+- Mongo Express UI: [http://localhost:8081](http://localhost:8081)
 
 ---
 
@@ -102,6 +103,13 @@ This project uses **MongoDB** as its primary database. By default, it is include
 ```
 mongodb://localhost:27017/
 ```
+
+### 🖥️ Mongo Express
+
+A lightweight web UI is available via **Mongo Express** at:  
+[http://localhost:8081](http://localhost:8081)
+
+Use it to inspect collections, documents, and indexes directly in your browser.
 
 ### Sample Collections (depends on your setup):
 
