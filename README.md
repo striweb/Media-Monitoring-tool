@@ -103,5 +103,5 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ## 👤 Author
 
-Developed by [Your Name or Company Name]  
-For inquiries or contributions, please contact: [your-email@example.com]
+Developed by Simeon Bakalov 
+For inquiries or contributions, please contact: bakalov@striweb.com
