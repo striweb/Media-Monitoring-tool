@@ -12,6 +12,7 @@
 - 👨‍💼 Admin user setup via script  
 - 🌐 Internet connectivity checks  
 - 🐳 Docker and Docker Compose support for production and development  
+- 🗃️ MongoDB integration for data persistence  
 - 🔧 Utility scripts for setup and maintenance
 
 ---
@@ -22,6 +23,7 @@
 |-----------|------------------|
 | Backend   | Python, Flask    |
 | Frontend  | React (CRA)      |
+| Database  | MongoDB          |
 | DevOps    | Docker, Docker Compose |
 | Scripts   | Bash (for setup and automation) |
 
@@ -53,6 +55,9 @@ Media-Monitoring-tool-main/
 - Python 3.7+
 - Node.js and npm (for frontend, optional if using Docker)
 - Docker and Docker Compose (recommended)
+- MongoDB (automatically included via Docker)
+
+---
 
 ### 🐳 Run with Docker
 
@@ -62,7 +67,8 @@ cd media-monitoring-tool
 docker-compose up --build
 ```
 
-Access the app at: [http://localhost:5000](http://localhost:5000)
+The app will be available at: [http://localhost:5000](http://localhost:5000)  
+React frontend may run at: [http://localhost:3000](http://localhost:3000)
 
 ---
 
@@ -75,6 +81,8 @@ pip install -r requirements.txt
 python app.py
 ```
 
+Ensure MongoDB is running at `mongodb://localhost:27017/`.
+
 #### Frontend (React)
 
 ```bash
@@ -84,6 +92,30 @@ npm start
 ```
 
 Open in browser: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🗃️ MongoDB Details
+
+This project uses **MongoDB** as its primary database. By default, it is included in `docker-compose.yml` and runs locally on:
+
+```
+mongodb://localhost:27017/
+```
+
+### Sample Collections (depends on your setup):
+
+- `users` – Admin and user data
+- `sources` – Media source definitions
+- `logs` – Monitoring logs or extracted entries
+
+You can access the database via:
+
+```bash
+docker exec -it <mongo_container_name> mongosh
+```
+
+Or using MongoDB Compass for GUI inspection.
 
 ---
 
@@ -103,5 +135,5 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ## 👤 Author
 
-Developed by Simeon Bakalov 
-For inquiries or contributions, please contact: bakalov@striweb.com
+Developed by **Simeon Bakalov**  
+For inquiries or contributions, please contact: 📧 bakalov@striweb.com
